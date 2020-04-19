@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Disco Refresh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      html, body{
+        background-color: #535353;
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff;
+        height:100%;
+        margin: 0;
+      }
+      #title{
+        padding-left: 10%;
+        line-height: 100%;
+      }
+      #successMessage{
+        z-index: -1;
+        position: absolute;
+        width: 40%;
+        height: 100vh;
+        left: 30%;
+        background-color: #181818;
+      }
+      #successText{
+        padding-left: 10%;
+        padding-top: 30%;
+      }
+      #description{
+        padding-left: 10%;
+      }
+      p{
+      }
+      a{
+        background-color: #1ED760;
+        border-radius: 100px;
+        color:#181818;
+        padding: 1em 1.5em;
+
+      }
+      #login{
+        position: absolute;
+        width: 40%;
+        height: 100vh;
+        left: 30%;
+        background-color: #181818;
+      }
+      #logo{
+        width: 20%;
+        padding-left: 10%;
+        padding-top: 5%;
+      }
+      @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+        #login, #successMessage{
+            width: 100%;
+            left: 0%;
+        }
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div id="login">
+        <img id = "logo" src = "spotifyLogo.png"/>
+        <div id = "title">
+          <h1>Spotify</h1>
+          <h1 style = "color: #1ED760; font-weight: bolder;">Disco</h1>
+          <h1>Refresh</h1>
+        </div>
+        <div id = "description">
+          <p>Access unlimited playlists</p>
+          <p>based on the music you <p style = "color: #1ED760; padding-bottom: 10%;">love!</p></p>
+          <a href="/login" id = "button">Log in to Spotify</a>
+        </div>
+        
+      </div>
+      <div id = "successMessage">
+        <div id = "successText"> 
+          <h1>Playlist</h1>
+          <h1>Generated</h1>
+          <h1 style = "color: #1ED760; font-weight: bolder;">Enjoy</h1>
+        </div>  
+      </div>
+    </div>
+  </body>
+  <script type='text/javascript'>
+    function checkUrl() {
+      var url = location.href;
+      console.log(url);
+      if (url == "https://discorefresh.herokuapp.com/#done"){
+        document.getElementById("successMessage").style.zIndex = "1";
+      }
+      else{
+        document.getElementById("successMessage").style.zIndex = "-1";
+      }
+    }
+
+window.onload = checkUrl();
+  </script>
+</html>
